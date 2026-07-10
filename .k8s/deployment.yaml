@@ -7,23 +7,21 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: eshoponweb-user007
-  name: webapp
+  name: eshoponweb-deployment
   labels:
-    app: sample-app
+    app: eshoponweb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: webapp
+      service: eshoponweb
   template:
     metadata:
       labels:
-        app: sample-app
-        service: webapp
+        app: eshoponweb
     spec:
       containers:
-        - name: webapp
+        - name: eshoponweb-app
           image: acrnm02test.azurecr.io/eshoponweb-user-007:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
